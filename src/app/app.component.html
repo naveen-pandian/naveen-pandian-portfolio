@@ -1,0 +1,82 @@
+<mat-drawer-container [hasBackdrop]="true">
+
+  <mat-drawer #drawer mode="side">
+    <span style="font-size:30px;"><br>&nbsp;&nbsp;my-skills<br></span><br>
+    <div *ngFor="let language of languages">
+        &nbsp;&nbsp;<img src="../../../assets/images/{{language.link}}" title={{language.name}} class="skillCard-img" />
+    </div>
+ </mat-drawer>
+  
+  <mat-drawer-content>
+      <input type="hidden" #selection><br/><br/>
+      
+      <button mat-icon-button class="menuButton" (click)="drawer.toggle()" > <mat-icon class="menuIcon">menu</mat-icon> </button>
+      
+      <img class="watermark" src="../assets/images/hello.png"><span class="watermark-name"> naveen - pandian</span>
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+      <mat-tab-group fitInkBarToContent color="accent" (selectedTabChange)="selection.value=$event.index.toString() ">  
+          <ng-container *ngFor="let collect of collection" >
+          <mat-tab>
+              <ng-template mat-tab-label > 
+              <mat-icon class="icon">{{collect.icon}}</mat-icon>
+              <div class="mattab"> {{collect.name}}   </div>
+              </ng-template>   
+          </mat-tab>
+          </ng-container>
+      </mat-tab-group>
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+      <div class="terminal" [ngSwitch]="selection.value">
+          <pre *ngSwitchDefault><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ sudo apt-get Welcome...<br><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ </pre>
+          <pre *ngSwitchCase="'0'"><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ sudo apt-get Welcome...<br><span class="green">naveen-pandian</span>:<span class="blue">~</span>$  </pre>
+          <pre *ngSwitchCase="'1'"><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ sudo apt-get Education...<br><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ </pre>
+          <pre *ngSwitchCase="'2'"><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ sudo apt-get Skills...<br><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ </pre>
+          <pre *ngSwitchCase="'3'"><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ sudo apt-get Projects...<br><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ </pre>
+          <pre *ngSwitchCase="'4'"><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ sudo apt-get Contact...<br><span class="green">naveen-pandian</span>:<span class="blue">~</span>$ </pre>
+          
+      </div>    
+      <mat-icon class="closeIcon" (click)="openDialog('0ms', '0ms')">close</mat-icon>
+      
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+      <div  class="box" [ngSwitch]="selection.value">
+         <pre *ngSwitchDefault><welcome-component></welcome-component></pre>
+         <pre *ngSwitchCase="'0'"><welcome-component></welcome-component></pre>
+         <pre *ngSwitchCase="'1'"><education-component></education-component></pre>
+         <pre *ngSwitchCase="'2'"><skills-component></skills-component></pre>
+         <pre *ngSwitchCase="'3'"><projects-component></projects-component></pre>
+         <pre *ngSwitchCase="'4'"><contact-component></contact-component></pre>
+      </div>   
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+
+       <div  class="my-image" [ngSwitch]="selection.value">
+        <pre *ngSwitchDefault><img src="../assets/images/np4.png"/></pre>
+        <pre *ngSwitchCase="'0'"><img src="../assets/images/np4.png"/></pre>
+        <pre *ngSwitchCase="'1'"><img src="../assets/images/np5.png"/></pre>
+        <pre *ngSwitchCase="'2'"><img src="../assets/images/np4.png"/></pre>
+        <pre *ngSwitchCase="'3'"><img src="../assets/images/np5.png"/></pre>
+        <pre *ngSwitchCase="'4'"><img src="../assets/images/np4.png"/></pre>
+     </div>  
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+        
+        <div class="socialMediaPadding">
+            <a href="https://www.linkedin.com/in/naveen-pandian-p-111ab8193/" target="_blank"><button mat-raised-button  class="socialMedia" style="background-color: #0082ca;" ><i class="fab fa-linkedin-in"></i></button></a>     &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/naveen-pandian" target="_blank"><button mat-raised-button  class="socialMedia" style="background-color: #333333;" ><i class="fab fa-github"></i></button></a>                       &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.youtube.com/@naveenpandianp7628/" target="_blank"><button mat-raised-button  class="socialMedia" style="background-color: #ed302f;" ><i class="fab fa-youtube"></i></button></a>           &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.facebook.com/naveen.pandian.3192/" target="_blank"><button mat-raised-button class="socialMedia" style="background-color: #3b5998;"  ><i class="fab fa-facebook-f" ></i></button></a>       &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.instagram.com/mr_little_np/" target="_blank"><button mat-raised-button  class="socialMedia" style="background-image: linear-gradient( to bottom right,#6228d7,#ee2a7b, #f9ce34 );" ><i class="fab fa-instagram"></i></button></a>     &nbsp;&nbsp;&nbsp;&nbsp;
+
+           
+        </div>
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+  
+    </mat-drawer-content>
+    
+  
+</mat-drawer-container>
+
+
+
+
+
+
+
