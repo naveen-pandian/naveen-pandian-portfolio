@@ -3,7 +3,7 @@
   <mat-drawer #drawer mode="side">
     <span style="font-size:30px;"><br>&nbsp;&nbsp;my-skills<br></span><br>
     <div *ngFor="let language of languages">
-        &nbsp;&nbsp;<img src="../../../assets/images/{{language.link}}" title={{language.name}} class="skillCard-img" />
+        &nbsp;&nbsp;<img src="/assets/images/{{language.link}}" title={{language.name}} class="skillCard-img" />
     </div>
  </mat-drawer>
   
@@ -12,7 +12,7 @@
       
       <button mat-icon-button class="menuButton" (click)="drawer.toggle()" > <mat-icon class="menuIcon">menu</mat-icon> </button>
       
-      <img class="watermark" src="../assets/images/hello.png"><span class="watermark-name"> naveen - pandian</span>
+      <img class="watermark" src="/assets/images/hello.png"><span class="watermark-name"> naveen - pandian</span>
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
       <mat-tab-group fitInkBarToContent color="accent" (selectedTabChange)="selection.value=$event.index.toString() ">  
           <ng-container *ngFor="let collect of collection" >
@@ -48,12 +48,12 @@
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
 
        <div  class="my-image" [ngSwitch]="selection.value">
-        <pre *ngSwitchDefault><img src="../assets/images/np4.png"/></pre>
-        <pre *ngSwitchCase="'0'"><img src="../assets/images/np4.png"/></pre>
-        <pre *ngSwitchCase="'1'"><img src="../assets/images/np5.png"/></pre>
-        <pre *ngSwitchCase="'2'"><img src="../assets/images/np4.png"/></pre>
-        <pre *ngSwitchCase="'3'"><img src="../assets/images/np5.png"/></pre>
-        <pre *ngSwitchCase="'4'"><img src="../assets/images/np4.png"/></pre>
+        <pre *ngSwitchDefault><img src="/assets/images/np4.png"/></pre>
+        <pre *ngSwitchCase="'0'"><img src="/assets/images/np4.png"/></pre>
+        <pre *ngSwitchCase="'1'"><img src="/assets/images/np5.png"/></pre>
+        <pre *ngSwitchCase="'2'"><img src="/assets/images/np4.png"/></pre>
+        <pre *ngSwitchCase="'3'"><img src="/assets/images/np5.png"/></pre>
+        <pre *ngSwitchCase="'4'"><img src="/assets/images/np4.png"/></pre>
      </div>  
 
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
