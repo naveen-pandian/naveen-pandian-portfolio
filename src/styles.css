@@ -10,10 +10,10 @@ mat-drawer{
     background-color: black;
     color:white;
   }
-mat-drawer-content {
+/* mat-drawer-content {  
    background-image:url(./app/Resources/images/universe.png) ;
-   background-repeat: no-repeat;    
-  }
+   background-repeat: no-repeat; 
+  } */
 .menuButton{
     position:absolute !important;
     top:0; 
@@ -48,8 +48,9 @@ mat-tab-group{
   z-index:19;
   padding-top: 2px;
   padding-left: 900px;
-  background-image: url("./app/Resources/images/universe.png");
-  background-repeat: no-repeat;
+  /* background-image: url("./app/Resources/images/universe.png"); 
+  background-repeat: no-repeat;*/
+  background: none;  
   }
 .mattab{
   font-weight: bold;
@@ -291,7 +292,7 @@ p
   z-index: 100;
   padding-left:790px;
   position: absolute;
-  bottom:10px;
+  top:1050px;
   font: 200 14px 'Oswald', sans-serif;
   font-weight:900;
   color: rgb(255, 255, 255);
@@ -302,7 +303,7 @@ p
   z-index:100;
   padding-left: 750px;
   position:absolute;
-  bottom:80px;
+  top:990px;
 }
 .socialMedia{
   
